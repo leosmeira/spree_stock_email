@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Spree::StockEmail < ActiveRecord::Base
 
   belongs_to :product
