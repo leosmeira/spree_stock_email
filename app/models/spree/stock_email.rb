@@ -29,7 +29,7 @@ class Spree::StockEmail < ActiveRecord::Base
   private
 
   def unique_product_email
-    errors.add :user, "already registered for notifications on this product" if email_exists?
+    errors.add :user, "já foi cadastrado para receber notificação sobre este produto" if email_exists?
   end
 
   def mark_as_sent

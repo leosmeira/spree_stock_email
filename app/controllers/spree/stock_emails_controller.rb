@@ -10,9 +10,9 @@ class Spree::StockEmailsController < ApplicationController
 
     begin
       stock_email.save! unless stock_email.email_exists?
-      flash[:success] = "We'll email you when #{product.name} is back in stock!"
+      flash[:success] = "Você receberá um email quando #{product.name} voltar ao estoque!"
     rescue => e
-      flash[:notice] = "There was a problem setting up your email alert. Please try again."
+      flash[:notice] = "Ocorreu um erro ao tentar enviar o email. Por favor tente novamente."
       Bugsnag.notify e
     end
 
