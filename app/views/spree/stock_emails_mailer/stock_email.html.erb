@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title><%= Spree.t("stock_email.email.subject") %></title>
+    <title><%= I18n.t ("spree.stock_email.email.subject") %></title>
     <style type="text/css">
       #outlook a{padding:0;} /* Force Outlook to provide a "view in browser" button. */
       body{width:100% !important;} .ReadMsgBody{width:100%;} .ExternalClass{width:100%;} /* Force Hotmail to display emails at full width */
@@ -118,7 +118,8 @@
                   <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateBody">
                     <tr>
                       <td valign="top" class="bodyContent">
-                        We're pleased to let you know that <%= @stock_email.product.name %> is back in stock  — if you need help with sizes or have questions, please call, email, or chat and we'll do our best.
+						Temos o prazer de informá-lo que o produto '<%= link_to @stock_email.product.name, "http://" + Spree::Config[:site_url].gsub(/http:|https:|\//,"") + '/produtos/' + @stock_email.product.permalink %>' está de volta ao estoque - se precisar de ajuda ou tiver dúvidas, entre em contato conosco por e-mail ou telefone e vamos fazer o nosso melhor.
+                        Clique <%= link_to "aqui", "http://" + Spree::Config[:site_url].gsub(/http:|https:|\//,"") + '/produtos/' + @stock_email.product.permalink %> para comprá-lo!
                       </td>
                     </tr>
                   </table>

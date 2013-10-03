@@ -1,0 +1,19 @@
+<% unless @product.on_sale? %> 
+	<div id="stock_email">
+		<% if current_user %>
+		  <%= link_to stock_emails_path(stock_email: {product: @product.id}), method: :post do %>
+		  	<%= t("spree.stock_email.form_title") %>
+		  <% end %>
+		<% else %>
+		  <%= form_for :stock_email, url: stock_emails_path, method: :post do |form| %>
+		    <p><%= t("spree.stock_email.form_title") %></p>
+		    <%= form.hidden_field :product, value: @product.id %>
+		    <%= form.label :email, "E-mail:" %>
+		    <%= form.text_field :email %>
+		    <%= button_tag class: 'button', type: :submit do %>
+			  <%= t("spree.stock_email.form_action") %>
+		    <% end %>
+		  <% end %>
+		<% end %>
+	</div>
+<% end %>
