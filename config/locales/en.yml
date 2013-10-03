@@ -1,12 +1,12 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
-"pt-BR":
+en:
   spree:
     stock_email:
-      form_title: "Receber aviso quando o produto estiver disponível!"
-      form_action: "Enviar"
-      admin_header: "Aguardando estoque"
-      of: "de"
+      title: "Receive notice when the product becomes available!"
+      action: "Send"
+      admin_header: "Awaiting stock"
+      of: "of"
       email:
-          subject: "Já temos seu produto em estoque!"
+          subject: "We already have your product in stock!"
